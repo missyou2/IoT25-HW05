@@ -1,7 +1,10 @@
-# IoT25-HW05
+![image](https://github.com/user-attachments/assets/b1b2558e-6316-469a-9497-7f8cd260ceb4)# IoT25-HW05
 
-### Screenshots of Arduino
+## Screenshots of Arduino
+### Client
 ![client](https://github.com/missyou2/IoT25-HW05/blob/7719446fa20d26194d2a7e53e56f6e3526ca2b9c/client.png)
+### Server
 ![server](https://github.com/missyou2/IoT25-HW05/blob/main/server.jpg?raw=true)
 
-### Demo video
+### Demo photo
+![demo](https://github.com/missyou2/IoT25-HW05/blob/main/HW05_demo_photo.jpg?raw=true)
