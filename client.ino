@@ -55,8 +55,8 @@ const uint8_t notificationOff[] = {0x0, 0x0};
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 //Variables to store temperature and humidity
-char* temperatureChar;
-char* humidityChar;
+char temperatureChar[10] = {0};  // Add space for null terminator
+char humidityChar[10] = {0};
 
 //Flags to check whether new temperature and humidity readings are available
 boolean newTemperature = false;
@@ -106,21 +106,20 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
   }
 };
  
-//When the BLE Server sends a new temperature reading with the notify property
+// Temperature callback
 static void temperatureNotifyCallback(BLERemoteCharacteristic* pBLERemoteCharacteristic, 
-                                        uint8_t* pData, size_t length, bool isNotify) {
-  //store temperature value
-  temperatureChar = (char*)pData;
+                                      uint8_t* pData, size_t length, bool isNotify) {
+  memset(temperatureChar, 0, sizeof(temperatureChar));  // clear buffer
+  strncpy(temperatureChar, (char*)pData, min(length, sizeof(temperatureChar) - 1));
   newTemperature = true;
 }
 
-//When the BLE Server sends a new humidity reading with the notify property
+// Humidity callback
 static void humidityNotifyCallback(BLERemoteCharacteristic* pBLERemoteCharacteristic, 
-                                    uint8_t* pData, size_t length, bool isNotify) {
-  //store humidity value
-  humidityChar = (char*)pData;
+                                   uint8_t* pData, size_t length, bool isNotify) {
+  memset(humidityChar, 0, sizeof(humidityChar));  // clear buffer
+  strncpy(humidityChar, (char*)pData, min(length, sizeof(humidityChar) - 1));
   newHumidity = true;
-  Serial.print(newHumidity);
 }
 
 //function that prints the latest sensor readings in the OLED display
