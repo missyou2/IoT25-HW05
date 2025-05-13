@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/b1b2558e-6316-469a-9497-7f8cd260ceb4)# IoT25-HW05
+# IoT25-HW05
 
 ## Screenshots of Arduino
 ### Client
