@@ -16,7 +16,7 @@
 #define temperatureCelsius
 
 //BLE server name
-#define bleServerName "ESP32_osangmin"
+#define bleServerName "ESP32_team12"
 
 #define DHTPIN 21      // DHT11 센서를 연결한 핀 번호
 #define DHTTYPE DHT11  // 센서 종류
